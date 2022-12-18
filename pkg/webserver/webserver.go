@@ -2,7 +2,7 @@ package webserver
 
 import (
 	"fmt"
-    "github.com/ITOTDEL4U/CRUD/Internal/rates"
+   "github.com/ITOTDEL4U/CRUD/Internal/app"
     "log"
 	"net/http"
 
@@ -23,13 +23,13 @@ func handleUsers(w http.ResponseWriter, r *http.Request) {
 
 	switch {
 	case r.Method == http.MethodGet:
-        rates.MethodGet();
+        app.MethodGet();
 	case r.Method == http.MethodPost:
-        rates.MethodPost();
+        app.MethodPost();
 	case r.Method == http.MethodPut:
-        rates.MethodPut();
+        app.MethodPut();
 	case r.Method == http.MethodDelete:
-        rates.MethodDelete();
+        app.MethodDelete();
 	default:
 		w.WriteHeader(http.StatusNotImplemented)
 
