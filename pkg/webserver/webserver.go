@@ -2,8 +2,8 @@ package webserver
 
 import (
 	"fmt"
-   "github.com/ITOTDEL4U/CRUD/Internal/app"
-    "log"
+
+	"log"
 	"net/http"
 
 	_ "github.com/lib/pq" // import for side effect
@@ -23,13 +23,13 @@ func handleUsers(w http.ResponseWriter, r *http.Request) {
 
 	switch {
 	case r.Method == http.MethodGet:
-        app.MethodGet();
+		app.MethodGet()
 	case r.Method == http.MethodPost:
-        app.MethodPost();
+		app.MethodPost()
 	case r.Method == http.MethodPut:
-        app.MethodPut();
+		app.MethodPut()
 	case r.Method == http.MethodDelete:
-        app.MethodDelete();
+		app.MethodDelete()
 	default:
 		w.WriteHeader(http.StatusNotImplemented)
 
