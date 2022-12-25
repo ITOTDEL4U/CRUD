@@ -1,16 +1,13 @@
 package psql
 
 import (
-
-    "database/sql"
-
+	"database/sql"
 )
 
-type Books struct {
-    db *sql.DB
+type ObjSql struct {
+	db *sql.DB
 }
 
-func NewBooks(db *sql.DB) *Books {
-    return &Books{db}
+func New(db *sql.DB) *ObjSql {
+	return &ObjSql{db}
 }
-

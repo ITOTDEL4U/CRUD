@@ -1,3 +1,5 @@
+github.com/ITOTDEL4U/CRUD v0.0.0-20221223003640-6c545376353a h1:39hr5gYl8DFAM0NTVrxH2i5HKxppzvpcCjfYVScSasA=
+github.com/ITOTDEL4U/CRUD v0.0.0-20221223003640-6c545376353a/go.mod h1:PLNSWxzkqiSx/aspOkn9y9EEWQPYQJo7WfgDkFtihhU=
 github.com/joho/godotenv v1.4.0 h1:3l4+N6zfMWnkbPEXKng2o2/MR5mSwTrBih4ZEkkz1lg=
 github.com/joho/godotenv v1.4.0/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/lib/pq v1.10.7 h1:p7ZhMD+KsSRozJr34udlUrhboJwWAgCg34+/ZZNvZZw=
