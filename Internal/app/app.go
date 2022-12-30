@@ -1,23 +1,59 @@
 package app
 
 import (
+	"fmt"
 	"log"
 	"os"
 
+	//	"path"
 	psql "github.com/ITOTDEL4U/CRUD/Internal/repository"
 	"github.com/ITOTDEL4U/CRUD/Internal/service"
 	"github.com/ITOTDEL4U/CRUD/pkg/database"
-	"github.com/joho/godotenv"
 
+	//	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
-)
+) /*
+func IsFile(filename string) bool {
+	info, err := os.Stat(filename)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return !info.IsDir()
+}
+
+func FindDir(filename string) string {
+	dir, _ := os.Getwd()
+	for !IsFile(path.Join(dir, filename)) {
+		pdir := path.Dir(dir)
+		if pdir == dir {
+			return ""
+		}
+		dir = pdir
+	}
+	return dir
+}
+*/
+func initializatin() {
+	fmt.Println("sdf")
+	/*
+		var BaseDir = FindDir("go.mod")
+
+		if BaseDir == "" {
+			log.Fatalln("Please use `go mod init` to create project.")
+			return
+		}
+		envFile := path.Join(BaseDir, ".env")
+		err := godotenv.Load(envFile)
+		if err != nil {
+			log.Fatalf("Failed to load %s: %+v\n", envFile, err)
+			return
+		}
+		// ....
+	*/
+}
 
 func Start() {
-
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	initializatin()
 
 	db, err := database.NewPosgresDBConnector(database.ConnectionInfo{
 
@@ -33,8 +69,10 @@ func Start() {
 	}
 
 	Repo := psql.New(db)
+	MyService := service.NewBooks(Repo)
 
-	Service := service.NewBooks(Repo)
+	fmt.Println(MyService)
+	fmt.Println(Repo)
 	/*
 		handler := rest.NewHandler(booksService)
 
